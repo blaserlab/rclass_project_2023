@@ -144,6 +144,7 @@ demo_data |>
 
 ## -------------------------------------------------------------------------------------------------------------------------------------
 # pivot from wide form to long form
+# everything you pivot needs to be of the same type
 long_data <- demo_data |>
   pivot_longer(cols = c(Sepal.Length,  Sepal.Width, Petal.Length, Petal.Width))
 long_data
