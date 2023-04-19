@@ -1,6 +1,9 @@
-# attach the packages we will need
-blaseRtemplates::install_one_package("tidyverse", "new")
-library("tidyverse")
+# blaseRtemplates::install_one_package("tidyverse", "new")
+# blaseRtemplates::install_one_package("zip", "new")
+# library("tidyverse")
+# or better yet:
+source("R/dependencies.R")
+source("R/configs.R")
 # read in an example data file
 # or substitute a file path to your own data
 readr::read_csv(file = "https://raw.githubusercontent.com/blaserlab/datascience.curriculum/main/inst/extdata/demo_iris_data.csv")

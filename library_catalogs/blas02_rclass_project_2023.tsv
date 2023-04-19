@@ -41,7 +41,7 @@ R_version	name	version	date_time	hash	binary_location	status
 4.2.1	desc	1.4.2	2023-04-12T14:33:47Z	c587e560d724e412df49f0902a661457	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/desc/1.4.2/c587e560d724e412df49f0902a661457/desc	available
 4.2.1	devtools	2.4.5	2023-04-12T14:33:47Z	7eddacc8810b63b9463d4a1eec08c1a5	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/devtools/2.4.5/7eddacc8810b63b9463d4a1eec08c1a5/devtools	available
 4.2.1	diffobj	0.3.5	2023-04-12T14:33:47Z	f96215901dd9da2d708c469ee21dde2d	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/diffobj/0.3.5/f96215901dd9da2d708c469ee21dde2d/diffobj	available
-4.2.1	digest	0.6.31	2023-04-12T14:33:48Z	acfe7cf5032e03c5277c248ab1ead608	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/digest/0.6.31/acfe7cf5032e03c5277c248ab1ead608/digest	available
+4.2.1	digest	0.6.31	2023-04-18T00:02:47Z	6dac2babdb3e976f22426b591a93702d	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/digest/0.6.31/6dac2babdb3e976f22426b591a93702d/digest	available
 4.2.1	downlit	0.4.2	2023-04-12T14:33:48Z	5035fec8185b5802339841f02e4767c5	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/downlit/0.4.2/5035fec8185b5802339841f02e4767c5/downlit	available
 4.2.1	dplyr	1.1.1	2023-04-13T13:55:17Z	e85603eca32e860bf89478925d9d0289	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/dplyr/1.1.1/e85603eca32e860bf89478925d9d0289/dplyr	active
 4.2.1	dtplyr	1.3.1	2023-04-17T21:24:46Z	8509a2dd26a463c72c95449b95ee6e2a	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/dtplyr/1.3.1/8509a2dd26a463c72c95449b95ee6e2a/dtplyr	available
@@ -178,4 +178,5 @@ R_version	name	version	date_time	hash	binary_location	status
 4.2.1	xopen	1.0.0	2023-04-12T14:34:43Z	54712867e6f0a0d702d50e54744ad153	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/xopen/1.0.0/54712867e6f0a0d702d50e54744ad153/xopen	available
 4.2.1	xtable	1.8.4	2023-04-12T14:34:43Z	a1b09cff3bb1249cad6c8cc928e639cb	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/xtable/1.8-4/a1b09cff3bb1249cad6c8cc928e639cb/xtable	available
 4.2.1	yaml	2.3.7	2023-04-12T14:34:43Z	b71c4ac0d96af90e3329c12170d26241	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/yaml/2.3.7/b71c4ac0d96af90e3329c12170d26241/yaml	available
-4.2.1	zip	2.2.2	2023-04-12T14:34:43Z	6f0635795aec5848545c8c71a09cc061	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/zip/2.2.2/6f0635795aec5848545c8c71a09cc061/zip	available
+4.2.1	zip	2.3.0	2023-04-17T23:56:19Z	c815c1b29fa28617cab9ba25e4b832a9	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/zip/2.3.0/c815c1b29fa28617cab9ba25e4b832a9/zip	available
+4.2.1	zoo	1.8.12	2023-04-17T23:55:45Z	9f86e5a22f903f8b1b89acd2a433ac34	/users/PAS2413/blas02/osc_classes/DATASCIENCE_OSU/ds_2023/r_4_2_cache/library/zoo/1.8-12/9f86e5a22f903f8b1b89acd2a433ac34/zoo	available
