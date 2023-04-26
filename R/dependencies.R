@@ -12,11 +12,13 @@
 # blaseRtemplates::get_new_library(newest_or_file = "<path/to/file>")
 
 # # Use this to get or update a package from the cache
-# blaseRtemplates::install_one_package("<package name>", how = "link_from_cache")
+# blaseRtemplates::install_one_package("blaseRtools", how = "link_from_cache")
 
 # # If you need a new package or an update from a repository, try this:
-# blaseRtemplates::install_one_package("tidyverse", how = "new_or_update")
-
+blaseRtemplates::install_one_package("nloptr", how = "new_or_update")
+pak::pkg_install("ggpubr")
+blaseRtemplates::hash_n_cache()
+install.packages("ggpubr")
 # # use "bioc::<package name>" for bioconductor packages
 # # use "<repo/package name>" for github source packages
 
