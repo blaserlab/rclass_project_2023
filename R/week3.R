@@ -27,6 +27,7 @@ bad_sum <- function(addend_2) {
   return(result)
 }
 
+bad_sum(addend_2 = 2)
 
 addend_1 <- 2
 bad_sum(addend_2 = 2)
@@ -37,14 +38,14 @@ good_sum(addend_1 = 3, addend_2 = 2)
 
 # return
 two_averages <- function(x) {
-# calculate the mean and median
-mean <- mean(x)
-median <- median(x)
-# put all of the results we want into a list
-return_list <- list(mean, median)
-# optionally provide names to the list elements so we know exactly what they are
-names(return_list) <- c("the_mean", "the_median")
-return(return_list)
+  # calculate the mean and median
+  mean <- mean(x)
+  median <- median(x)
+  # put all of the results we want into a list
+  return_list <- list(mean, median)
+  # optionally provide names to the list elements so we know exactly what they are
+  names(return_list) <- c("the_mean", "the_median")
+  return(return_list)
 }
 
 
@@ -76,13 +77,14 @@ safe_divide(x = 1, y = 0)
 
 # map
 # attach the packages we will need
-library(tidyverse)
+library("tidyverse")
 
 
 # return the results in the form of a list
+# \ is the same as function
 map(
   .x = c(1, 2, 3),
-  .f = function(x) {
+  .f = \(x) {
     result <- x + 1
     return(result)
   }
@@ -115,8 +117,6 @@ map2(
 
 
 # map along an arbitrary number of lists or vectors
-
-
 pmap(
   .l = list(
     x = c(1, 2, 3),

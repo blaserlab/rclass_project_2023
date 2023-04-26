@@ -15,10 +15,8 @@
 # blaseRtemplates::install_one_package("blaseRtools", how = "link_from_cache")
 
 # # If you need a new package or an update from a repository, try this:
-blaseRtemplates::install_one_package("nloptr", how = "new_or_update")
-pak::pkg_install("ggpubr")
-blaseRtemplates::hash_n_cache()
-install.packages("ggpubr")
+# blaseRtemplates::install_one_package("nloptr", how = "new_or_update")
+
 # # use "bioc::<package name>" for bioconductor packages
 # # use "<repo/package name>" for github source packages
 
