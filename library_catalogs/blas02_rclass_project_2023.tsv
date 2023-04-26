@@ -253,7 +253,7 @@ R_version	name	version	date_time	hash	binary_location	status
 4.2.2	proxy	0.4.27	2023-04-26T12:39:09Z	f367f06c10d6b1995261f464c1705fc8	C:/Users/blas02/test_bt/cache/library/proxy/0.4-27/f367f06c10d6b1995261f464c1705fc8/proxy	available
 4.2.2	ps	1.7.5	2023-04-26T12:33:00Z	639c920ead2f738e1057fe179d52b0c3	C:/Users/blas02/test_bt/cache/library/ps/1.7.5/639c920ead2f738e1057fe179d52b0c3/ps	available
 4.2.2	pscl	1.5.5	2023-04-26T12:39:09Z	4fd1a75b9ec88a2f648ea9df0ebd1e2a	C:/Users/blas02/test_bt/cache/library/pscl/1.5.5/4fd1a75b9ec88a2f648ea9df0ebd1e2a/pscl	available
-4.2.2	purrr	1.0.1	2023-04-13T14:31:23Z	e57168eabca611a82bbe6c70dcb37f82	C:/Users/blas02/test_bt/cache/library/purrr/1.0.1/e57168eabca611a82bbe6c70dcb37f82/purrr	available
+4.2.2	purrr	1.0.1	2023-04-13T14:31:23Z	e57168eabca611a82bbe6c70dcb37f82	C:/Users/blas02/test_bt/cache/library/purrr/1.0.1/e57168eabca611a82bbe6c70dcb37f82/purrr	active
 4.2.2	quantreg	5.95	2023-04-26T12:39:09Z	4fc9267ed97b3bfd51422ae4e98d6437	C:/Users/blas02/test_bt/cache/library/quantreg/5.95/4fc9267ed97b3bfd51422ae4e98d6437/quantreg	available
 4.2.2	R.methodsS3	1.8.2	2023-04-26T12:39:10Z	e5e0c36c98cd138615984c1e929202a9	C:/Users/blas02/test_bt/cache/library/R.methodsS3/1.8.2/e5e0c36c98cd138615984c1e929202a9/R.methodsS3	available
 4.2.2	R.oo	1.25.0	2023-04-26T12:39:10Z	0880e0ff8096519fc7249d861bcb0491	C:/Users/blas02/test_bt/cache/library/R.oo/1.25.0/0880e0ff8096519fc7249d861bcb0491/R.oo	available

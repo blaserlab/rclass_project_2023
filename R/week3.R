@@ -33,6 +33,7 @@ addend_1 <- 2
 bad_sum(addend_2 = 2)
 
 
+
 # the function's scope supersedes the global environment
 good_sum(addend_1 = 3, addend_2 = 2)
 
@@ -82,9 +83,10 @@ library("tidyverse")
 
 # return the results in the form of a list
 # \ is the same as function
-map(
+#  purrr cheatsheet
+purrr::map(
   .x = c(1, 2, 3),
-  .f = \(x) {
+  .f = function(x) {
     result <- x + 1
     return(result)
   }
@@ -99,8 +101,6 @@ map_dbl(
     return(result)
   }
 )
-
-
 
 
 # map along two vectors
@@ -125,9 +125,9 @@ pmap(
                    "The final result is "),
     end_text = c(" apples", " bananas", " cherries")
   ),
-  .f = function(x, begin_text, end_text) {
+  .f = function(x, begin_text, end_text, final_text = ".") {
     result <- x + 1
-    return(paste0(begin_text, result, end_text))
+    return(paste0(begin_text, result, end_text, final_text))
   }
 )
 
@@ -177,6 +177,7 @@ ggplot(data = iris, mapping = aes(x = Species, y = Sepal.Length, color = Species
 
 
 # Change the colors
+# Rcolorbrewer
 ggplot(data = iris, mapping = aes(x = Species, y = Sepal.Length, color = Species, fill = Species)) +
   geom_jitter(shape = 21, alpha = 0.4, size = 2) +
   stat_summary(fun.data = mean_se,
@@ -188,7 +189,8 @@ ggplot(data = iris, mapping = aes(x = Species, y = Sepal.Length, color = Species
                      comparisons = list(c("setosa", "versicolor"),
                                         c("versicolor", "virginica"),
                                         c("setosa", "virginica"))) +
-  scale_fill_brewer(palette = "Dark2", aesthetics = c("fill", "color"))
+  # scale_fill_brewer(palette = "Dark2", aesthetics = c("fill", "color")) +
+  scale_fill_manual(values = c("#FF0000", "#FFFF00", "#00FFFF"))
 
 
 
