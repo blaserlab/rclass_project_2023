@@ -9,16 +9,42 @@ library(ggplot2)
 theme_set(theme_cowplot(font_size = 12))
 
 
-
-## review laod_process.R
-
-vig_qc_res
-
+# data structure: cellDataSet
+vignette_cds
+monocle3::exprs(vignette_cds)
 # Cell metadata
+colData(vignette_cds)
 bb_cellmeta(vignette_cds)
 
 # Gene metadata
+rowData(vignette_cds)
 bb_rowmeta(vignette_cds)
+
+# reduced dimensions
+SingleCellExperiment::reducedDims(vignette_cds)$PCA
+SingleCellExperiment::reducedDims(vignette_cds)$UMAP
+SingleCellExperiment::reducedDims(vignette_cds)$Aligned
+
+
+## review laod_process.R
+# Read in and inspect the configuration file.
+analysis_configs <- read_csv(system.file("extdata/vignette_config.csv",
+                                        package = "blaseRdata"),
+                            col_type = list(.default = col_character()))
+analysis_configs
+
+# Fix the windows-style file path.
+analysis_configs <- analysis_configs |>
+  mutate(targz_path = bb_fix_file_path(targz_path))
+analysis_configs
+
+# QC
+vig_qc_res[[1]][[1]]
+vig_qc_res[[1]][[2]]
+vig_qc_res[[1]][[3]]
+vig_qc_res[[1]][[4]]
+vig_qc_res[[1]][[5]]
+vig_qc_res[[1]][[6]]
 
 # Visualizations
 bb_var_umap(vignette_cds, var = "sample")
