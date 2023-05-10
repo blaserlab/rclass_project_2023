@@ -47,21 +47,15 @@ vig_qc_res[[1]][[5]]
 vig_qc_res[[1]][[6]]
 
 # Visualizations
+bb_cellmeta(vignette_cds) |> glimpse()
 bb_var_umap(vignette_cds, var = "sample")
 
-bb_var_umap(vignette_cds, var = "sample",
-            alt_dim_x = "prealignment_dim1",
-            alt_dim_y = "prealignment_dim2")
-
 # Clustering
-##  top markers
-vignette_top_markers
 bb_var_umap(vignette_cds, var = "partition")
 bb_var_umap(vignette_cds, var = "leiden")
 bb_var_umap(vignette_cds, var = "louvain")
+vignette_top_markers
 
-# gene modules
-bb_rowmeta(vignette_cds)
 
 # label transfer using Seurat
 bb_var_umap(vignette_cds,
@@ -72,9 +66,11 @@ bb_var_umap(vignette_cds,
             group_label_size = 4)
 
 bb_var_umap(vignette_cds, var = "seurat_celltype_l1")
+bb_var_umap(vignette_cds, var = "seurat_celltype_l2")
 
 # cell assignments
 bb_var_umap(vignette_cds, var = "leiden", plot_title = "Leiden Clusters")
+
 leiden_seurat <- bb_cellmeta(vignette_cds) %>%
   group_by(leiden, seurat_celltype_l1) %>%
   summarise(n = n())
@@ -92,10 +88,10 @@ colData(vignette_cds)$leiden_assignment <- recode(colData(vignette_cds)$leiden,
                                                   "2" = "DC/Mono",
                                                   "3" = "B")
 bb_var_umap(vignette_cds, var = "leiden_assignment")
+bb_var_umap(vignette_cds, var = "leiden_assignment", overwrite_labels = TRUE)
 
 
 # UMAP plot types
-
 bb_var_umap(vignette_cds,
             var = "leiden_assignment",
             value_to_highlight = "T/NK",
@@ -109,13 +105,75 @@ bb_var_umap(vignette_cds,
             cell_size = 2,
             foreground_alpha = 0.4)
 
+# gene expression umaps
+bb_gene_umap(vignette_cds,
+             gene_or_genes = "CD3D")
+bb_gene_umap(vignette_cds, gene_or_genes = c("CD19", "CD3D", "CD14"))
+
+# gene modules
+bb_rowmeta(vignette_cds) |> glimpse()
+
+agg_genes <-
+  bb_rowmeta(vignette_cds) %>%
+  select(id, module_labeled) %>%
+  filter(module_labeled == "Module 1")
+agg_genes
+
+bb_gene_umap(vignette_cds,
+             gene_or_genes = agg_genes)
+
+# gene bubbles
+bb_genebubbles(vignette_cds,
+               genes = c("CD3E", "CD14", "CD19"),
+               cell_grouping = "leiden_assignment",
+               scale_expr = TRUE)
+
+bb_genebubbles(vignette_cds,
+               genes = c("CD3E", "CD14", "CD19"),
+               cell_grouping = "leiden_assignment",
+               scale_expr = FALSE)
+
+# specify the order of the genes
+bb_genebubbles(vignette_cds,
+               genes = c("CD3E", "CD14", "CD19"),
+               cell_grouping = "leiden_assignment",
+               gene_ordering = c("as_supplied"),
+               group_ordering = c("as_supplied"),
+               scale_expr = FALSE)
+
+
+# differential gene expression
+
+vignette_exp_design <-
+  bb_cellmeta(vignette_cds) |>
+  group_by(sample, leiden_assignment) |>
+  summarise()
+vignette_exp_design
+
+vignette_pseudobulk_res <-
+  bb_pseudobulk_mf(cds = vignette_cds,
+                   pseudosample_table = vignette_exp_design,
+                   design_formula = "~ leiden_assignment",
+                   result_recipe = c("leiden_assignment", "T/NK", "DC/Mono"))
+
+# Differential expression results.  Positive L2FC indicates up in T/NK vs DC/Mono
+
+glimpse(vignette_pseudobulk_res)
+
+vignette_pseudobulk_res$Result |>
+  filter(log2FoldChange > 0) |>
+  arrange(padj)
+
+vignette_pseudobulk_res$Result |>
+  filter(log2FoldChange < 0) |>
+  arrange(padj)
+
+# differential representation
 bb_var_umap(vignette_cds,
             var = "density",
             facet_by = "equipment",
             cell_size = 2,
             plot_title = "Local Cell Density")
-
-bb_cellmeta(vignette_cds) |> glimpse()
 
 # for demonstration only
 colData(vignette_cds)$demo_sample <- paste0(colData(vignette_cds)$sample, "_", 1:3)
@@ -127,34 +185,4 @@ bb_cluster_representation2(obj = vignette_cds,
                           comparison_levels = c("chromium", "X"),
                           return_val = "plot",
                           sig_val = "PValue")
-
-
-bb_gene_umap(vignette_cds,
-             gene_or_genes = "CD3D")
-bb_gene_umap(vignette_cds, gene_or_genes = c("CD19", "CD3D", "CD14"))
-agg_genes <-
-  bb_rowmeta(vignette_cds) %>%
-  select(id, module_labeled) %>%
-  filter(module_labeled == "Module 1")
-
-
-bb_gene_umap(vignette_cds,
-             gene_or_genes = agg_genes)
-
-# gene bubbles
-bb_genebubbles(vignette_cds,
-               genes = c("CD3E", "CD14", "CD19"),
-               cell_grouping = "leiden_assignment",
-               scale_expr = TRUE)
-bb_genebubbles(vignette_cds,
-               genes = c("CD3E", "CD14", "CD19"),
-               cell_grouping = "leiden_assignment",
-               scale_expr = FALSE)
-# specify the order of the genes
-bb_genebubbles(vignette_cds,
-               genes = c("CD3E", "CD14", "CD19"),
-               cell_grouping = "leiden_assignment",
-               gene_ordering = c("as_supplied"),
-               group_ordering = c("as_supplied"),
-               scale_expr = FALSE)
 
