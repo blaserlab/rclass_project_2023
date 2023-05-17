@@ -27,11 +27,12 @@
 # load and attach packages ------------------------------------------------
 
 library("blaseRtemplates")
+library("blaseRtools")
 library("conflicted")
 library("tidyverse")
 library("gert")
 
 # load, install, and/or update the project data -----------------------------
 
-# blaseRtemplates::project_data("<project.datapkg>")
+blaseRtemplates::project_data("/workspace/brad_workspace/datascience_data")
 
